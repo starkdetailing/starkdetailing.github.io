@@ -22,6 +22,7 @@ body {
 
 .btn-yellow:hover {
   background-color: #e6c200;
+  color: #bd9d00;
   transform: scale(1.05);
 }
 
