@@ -11,30 +11,49 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="overflow-x-hidden text-white" style="background-color: #141414;">
+  
   <!-- Header -->
-  <header class="flex items-center justify-between p-6">
+  <header class="flex items-center justify-between p-6 relative z-50">
     <img src="logo/logo2.png" alt="STARK Detailing Logo" class="h-16">
-    <nav class="space-x-6 text-lg">
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 text-lg">
       <a href="#leistungen" class="head">Leistungen</a>
       <a href="#uebermich" class="head">Über mich</a>
-	  <a href="#galerie" class="head">Galerie</a>
+      <a href="#galerie" class="head">Galerie</a>
       <a href="#kontakt" class="head">Kontakt</a>
-	  <style>
-		.head:hover {
-			color: #ffd700;
-		}
-	  </style>
     </nav>
+
+    <!-- Mobile Button -->
+    <button id="mobileMenuBtn" class="md:hidden text-white focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="absolute top-full left-0 w-full bg-[#141414] text-center text-lg py-4 space-y-4 hidden md:hidden">
+      <a href="#leistungen" class="block head">Leistungen</a>
+      <a href="#uebermich" class="block head">Über mich</a>
+      <a href="#galerie" class="block head">Galerie</a>
+      <a href="#kontakt" class="block head">Kontakt</a>
+    </div>
+
+    <style>
+      .head:hover {
+        color: #ffd700;
+      }
+    </style>
   </header>
 
   <!-- Hero Section -->
   <section class="text-center py-24 px-4" data-aos="fade-up">
     <h1 class="text-5xl font-extrabold yellow mb-4">STARK Detailing</h1>
     <p class="text-xl text-gray-300 mb-8">Glanz auf den Punkt gebracht</p>
-    <a href="#kontakt" class="btn-yellow px-6 py-3 rounded-lg font-bold transition-transform transform hover:scale-105">Jetzt Termin vereinbaren</a>
+    <a href="#kontakt" class="btn-yellow w-fit px-6 py-3 rounded-lg">Jetzt Termin vereinbaren</a>
   </section>
 
-  <!-- Leistungen & Preise -->
+  <!-- Leistungen -->
   <section id="leistungen" class="py-20 px-6 max-w-6xl mx-auto">
     <h2 class="text-4xl yellow font-bold mb-12 text-center" data-aos="zoom-in">Leistungen & Preise</h2>
     <div class="grid md:grid-cols-3 gap-8">
@@ -55,49 +74,57 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Über mich -->
-	<section id="uebermich" class="py-20 px-6 max-w-4xl mx-auto">
-	  <h2 class="text-4xl yellow font-bold mb-8 text-center" data-aos="fade-up">Über mich</h2>
-	  <div class="space-y-6 text-gray-300 text-lg leading-relaxed text-center" data-aos="fade-up" data-aos-delay="100">
-		<p>
-		  Mein Name ist <strong style="color: #ffd700;">Philipp</strong>, und Autos sind meine Leidenschaft – nicht nur als Fortbewegungsmittel, sondern als Ausdruck von Persönlichkeit und Stil.
-		  Schon in jungen Jahren habe ich begonnen, mich intensiv mit Fahrzeugpflege auseinanderzusetzen.
-		</p>
-		<p>
-		  Mit <strong style="color: #ffd700;">STARK Detailing</strong> habe ich mir den Traum erfüllt, meine Begeisterung zum Beruf zu machen. Jedes Fahrzeug, das ich aufbereite, behandle ich mit höchster Präzision, Sorgfalt und dem Anspruch, das bestmögliche Ergebnis zu erzielen.
-		</p>
-		<p>
-		  Egal ob <strong style="color: #ffd700;">Innen- oder Außenreinigung, Lackaufbereitung oder Keramikversiegelung</strong> – bei mir steht Qualität vor Quantität. Ich nehme mir für jedes Fahrzeug die nötige Zeit, um es in neuem Glanz erstrahlen zu lassen.
-		</p>
-		<p>
-		  Mein Ziel ist es, dass du dein Auto nicht nur sauber, sondern begeistert zurückbekommst.
-		</p>
-	  </div>
-	</section>
-  
+  <section id="uebermich" class="py-20 px-6 max-w-4xl mx-auto">
+    <h2 class="text-4xl yellow font-bold mb-8 text-center" data-aos="fade-up">Über mich</h2>
+    <div class="space-y-6 text-gray-300 text-lg leading-relaxed text-center" data-aos="fade-up" data-aos-delay="100">
+      <p>
+        Mein Name ist <strong style="color: #ffd700;">Philipp</strong>, und Autos sind meine Leidenschaft – nicht nur als Fortbewegungsmittel, sondern als Ausdruck von Persönlichkeit und Stil.
+      </p>
+      <p>
+        Mit <strong style="color: #ffd700;">STARK Detailing</strong> habe ich mir den Traum erfüllt, meine Begeisterung zum Beruf zu machen.
+      </p>
+      <p>
+        Egal ob <strong style="color: #ffd700;">Innen- oder Außenreinigung, Lackaufbereitung oder Keramikversiegelung</strong> – bei mir steht Qualität vor Quantität.
+      </p>
+      <p>
+        Mein Ziel ist es, dass du dein Auto nicht nur sauber, sondern begeistert zurückbekommst.
+      </p>
+    </div>
+  </section>
+
   <!-- Galerie -->
-  <section id="galerie" class="py-20 px-6" style="background-color: #141414;">
+  <section id="galerie" class="py-20 px-6 bg-[#141414]">
     <h2 class="text-4xl yellow font-bold text-center mb-12" data-aos="fade-right">Galerie</h2>
     <div class="grid md:grid-cols-3 gap-4">
-      <img src="galerie/bild1.jpg" class="gallery-img" data-aos="zoom-in">
-      <img src="galerie/bild2.jpg" class="gallery-img" data-aos="zoom-in" data-aos-delay="100">
-      <img src="galerie/bild3.jpg" class="gallery-img" data-aos="zoom-in" data-aos-delay="200">
+      <div class="text-center space-y-2" data-aos="zoom-in">
+        <img src="galerie/bild1.jpg" class="gallery-img mx-auto">
+        <p class="text-gray-400 text-sm">Lackaufbereitung mit Tiefenglanz</p>
+      </div>
+      <div class="text-center space-y-2" data-aos="zoom-in" data-aos-delay="100">
+        <img src="galerie/bild2.jpg" class="gallery-img mx-auto">
+        <p class="text-gray-400 text-sm">Felgenreinigung und Versiegelung</p>
+      </div>
+      <div class="text-center space-y-2" data-aos="zoom-in" data-aos-delay="200">
+        <img src="galerie/bild3.jpg" class="gallery-img mx-auto">
+        <p class="text-gray-400 text-sm">Innenraumaufbereitung mit Detailarbeit</p>
+      </div>
     </div>
   </section>
 
   <!-- Kontakt -->
-  <section id="kontakt" class="py-20 px-6" style="background-color: black;">
+  <section id="kontakt" class="py-20 px-6 bg-black">
     <h2 class="text-4xl yellow font-bold text-center mb-8" data-aos="fade-up">Kontakt</h2>
     <form action="https://formspree.io/f/xzzrryeq" method="POST" class="max-w-xl mx-auto space-y-6" data-aos="fade-up" data-aos-delay="100">
       <input type="text" name="name" placeholder="Name" required class="form-input">
       <input type="email" name="email" placeholder="E-Mail" required class="form-input">
       <textarea name="message" placeholder="Nachricht" rows="5" required class="form-input"></textarea>
-      <button type="submit" class="btn-yellow w-full py-3 rounded font-bold transition-transform transform hover:scale-105">Absenden</button>
+      <button type="submit" class="btn-yellow w-full py-3 rounded">Absenden</button>
     </form>
   </section>
-  
-  <!-- Standortkarte -->
+
+  <!-- Standort -->
   <section class="py-20 px-6 bg-black text-center">
     <h2 class="text-4xl yellow font-bold mb-8" data-aos="fade-up">Standort</h2>
     <p class="text-lg text-gray-300 mb-6" data-aos="fade-up">
@@ -125,26 +152,33 @@
     <p class="text-sm text-gray-500 mt-4">&copy; 2025 STARK Detailing</p>
   </footer>
 
-	<button id="scrollToTopBtn" title="Nach oben" class="fixed bottom-6 right-6 bg-yellow-400 text-black px-4 py-2 rounded-full shadow-lg hover:bg-yellow-300 transition-opacity opacity-0 pointer-events-none z-50">
-	  ⬆
-	</button>
+  <!-- Scroll-to-top Button -->
+  <button id="scrollToTopBtn" title="Nach oben" class="fixed bottom-6 right-6 bg-yellow-400 text-black px-4 py-2 rounded-full shadow-lg hover:bg-yellow-300 transition-opacity opacity-0 pointer-events-none z-50">
+    ⬆
+  </button>
 
+  <!-- JS -->
   <script>
     AOS.init({ duration: 800, once: true });
-	
-	const btn = document.getElementById("scrollToTopBtn");
 
-	window.addEventListener("scroll", () => {
-		if (window.scrollY > 300) {
-		  btn.classList.remove("opacity-0", "pointer-events-none");
-		} else {
-		  btn.classList.add("opacity-0", "pointer-events-none");
-		}
-	});
+    const btn = document.getElementById("scrollToTopBtn");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        btn.classList.remove("opacity-0", "pointer-events-none");
+      } else {
+        btn.classList.add("opacity-0", "pointer-events-none");
+      }
+    });
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
-	btn.addEventListener("click", () => {
-		window.scrollTo({ top: 0, behavior: "smooth" });
-	});
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
   </script>
 </body>
 </html>

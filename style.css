@@ -59,14 +59,13 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
 }
-
 .gallery-img:hover {
   transform: scale(1.07);
   box-shadow: 0 10px 30px rgba(255, 215, 0, 0.25);
 }
 
 /* Footer Links mit Unterstreichung */
-footer a{
+footer a {
   position: relative;
   transition: color 0.3s ease;
 }
