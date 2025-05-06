@@ -8,13 +8,13 @@
   background-color: #ffd700;
   color: black;
   font-weight: bold;
-  box-shadow: 0 0 0 rgba(255, 215, 0, 0.4);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-yellow:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
+
 
 /* Eingabefelder Kontaktformular */
 .form-input {

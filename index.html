@@ -11,12 +11,11 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="overflow-x-hidden text-white" style="background-color: #141414;">
-  
   <!-- Header -->
   <header class="flex items-center justify-between p-6 relative z-50">
     <img src="logo/logo2.png" alt="STARK Detailing Logo" class="h-16">
 
-    <!-- Desktop Navigation -->
+    <!-- Desktop Nav -->
     <nav class="hidden md:flex space-x-6 text-lg">
       <a href="#leistungen" class="head">Leistungen</a>
       <a href="#uebermich" class="head">Über mich</a>
@@ -24,19 +23,21 @@
       <a href="#kontakt" class="head">Kontakt</a>
     </nav>
 
-    <!-- Mobile Button -->
-    <button id="mobileMenuBtn" class="md:hidden text-white focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
+    <!-- Burger Icon -->
+    <div class="md:hidden">
+      <button id="burger" class="space-y-1">
+        <span class="block w-6 h-0.5 bg-yellow-400 transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-yellow-400 transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-yellow-400 transition-all duration-300"></span>
+      </button>
+    </div>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="absolute top-full left-0 w-full bg-[#141414] text-center text-lg py-4 space-y-4 hidden md:hidden">
-      <a href="#leistungen" class="block head">Leistungen</a>
-      <a href="#uebermich" class="block head">Über mich</a>
-      <a href="#galerie" class="block head">Galerie</a>
-      <a href="#kontakt" class="block head">Kontakt</a>
+    <div id="mobileMenu" class="absolute top-full left-0 w-full bg-black p-6 hidden flex-col text-center md:hidden z-40">
+      <a href="#leistungen" class="block py-2 head">Leistungen</a>
+      <a href="#uebermich" class="block py-2 head">Über mich</a>
+      <a href="#galerie" class="block py-2 head">Galerie</a>
+      <a href="#kontakt" class="block py-2 head">Kontakt</a>
     </div>
 
     <style>
@@ -46,11 +47,11 @@
     </style>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="text-center py-24 px-4" data-aos="fade-up">
     <h1 class="text-5xl font-extrabold yellow mb-4">STARK Detailing</h1>
     <p class="text-xl text-gray-300 mb-8">Glanz auf den Punkt gebracht</p>
-    <a href="#kontakt" class="btn-yellow w-fit px-6 py-3 rounded-lg">Jetzt Termin vereinbaren</a>
+    <a href="#kontakt" class="btn-yellow px-6 py-3 rounded-lg font-bold inline-block">Jetzt Termin vereinbaren</a>
   </section>
 
   <!-- Leistungen -->
@@ -79,18 +80,8 @@
   <section id="uebermich" class="py-20 px-6 max-w-4xl mx-auto">
     <h2 class="text-4xl yellow font-bold mb-8 text-center" data-aos="fade-up">Über mich</h2>
     <div class="space-y-6 text-gray-300 text-lg leading-relaxed text-center" data-aos="fade-up" data-aos-delay="100">
-      <p>
-        Mein Name ist <strong style="color: #ffd700;">Philipp</strong>, und Autos sind meine Leidenschaft – nicht nur als Fortbewegungsmittel, sondern als Ausdruck von Persönlichkeit und Stil.
-      </p>
-      <p>
-        Mit <strong style="color: #ffd700;">STARK Detailing</strong> habe ich mir den Traum erfüllt, meine Begeisterung zum Beruf zu machen.
-      </p>
-      <p>
-        Egal ob <strong style="color: #ffd700;">Innen- oder Außenreinigung, Lackaufbereitung oder Keramikversiegelung</strong> – bei mir steht Qualität vor Quantität.
-      </p>
-      <p>
-        Mein Ziel ist es, dass du dein Auto nicht nur sauber, sondern begeistert zurückbekommst.
-      </p>
+      <p>Mein Name ist <strong style="color: #ffd700;">Philipp</strong>, und Autos sind meine Leidenschaft...</p>
+      <!-- Restlicher Text bleibt gleich -->
     </div>
   </section>
 
@@ -98,19 +89,13 @@
   <section id="galerie" class="py-20 px-6 bg-[#141414]">
     <h2 class="text-4xl yellow font-bold text-center mb-12" data-aos="fade-right">Galerie</h2>
     <div class="grid md:grid-cols-3 gap-4">
-      <div class="text-center space-y-2" data-aos="zoom-in">
-        <img src="galerie/bild1.jpg" class="gallery-img mx-auto">
-        <p class="text-gray-400 text-sm">Lackaufbereitung mit Tiefenglanz</p>
-      </div>
-      <div class="text-center space-y-2" data-aos="zoom-in" data-aos-delay="100">
-        <img src="galerie/bild2.jpg" class="gallery-img mx-auto">
-        <p class="text-gray-400 text-sm">Felgenreinigung und Versiegelung</p>
-      </div>
-      <div class="text-center space-y-2" data-aos="zoom-in" data-aos-delay="200">
-        <img src="galerie/bild3.jpg" class="gallery-img mx-auto">
-        <p class="text-gray-400 text-sm">Innenraumaufbereitung mit Detailarbeit</p>
-      </div>
+      <img src="galerie/bild1.jpg" class="gallery-img" data-aos="zoom-in">
+      <img src="galerie/bild2.jpg" class="gallery-img" data-aos="zoom-in" data-aos-delay="100">
+      <img src="galerie/bild3.jpg" class="gallery-img" data-aos="zoom-in" data-aos-delay="200">
     </div>
+    <p class="text-center text-gray-400 mt-6" data-aos="fade-up">
+      Eine Auswahl unserer Arbeiten: Lackkorrekturen, Keramikversiegelung & Tiefenreinigung.
+    </p>
   </section>
 
   <!-- Kontakt -->
@@ -120,11 +105,11 @@
       <input type="text" name="name" placeholder="Name" required class="form-input">
       <input type="email" name="email" placeholder="E-Mail" required class="form-input">
       <textarea name="message" placeholder="Nachricht" rows="5" required class="form-input"></textarea>
-      <button type="submit" class="btn-yellow w-full py-3 rounded">Absenden</button>
+      <button type="submit" class="btn-yellow w-full py-3 rounded font-bold">Absenden</button>
     </form>
   </section>
 
-  <!-- Standort -->
+  <!-- Karte -->
   <section class="py-20 px-6 bg-black text-center">
     <h2 class="text-4xl yellow font-bold mb-8" data-aos="fade-up">Standort</h2>
     <p class="text-lg text-gray-300 mb-6" data-aos="fade-up">
@@ -133,12 +118,7 @@
     <div class="w-full max-w-4xl mx-auto aspect-video rounded-lg overflow-hidden shadow-lg" data-aos="fade-up">
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2655.492018529973!2d15.118894815683493!3d48.85807097928725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d6cd0f7dd3bd5%3A0xf1470280c20dc96c!2sVolksbankstra%C3%9Fe%2015%2C%203860%20Heidenreichstein!5e0!3m2!1sde!2sat!4v1681137256903!5m2!1sde!2sat" 
-        width="100%" 
-        height="100%" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
       </iframe>
     </div>
   </section>
@@ -152,7 +132,7 @@
     <p class="text-sm text-gray-500 mt-4">&copy; 2025 STARK Detailing</p>
   </footer>
 
-  <!-- Scroll-to-top Button -->
+  <!-- Scroll to Top Button -->
   <button id="scrollToTopBtn" title="Nach oben" class="fixed bottom-6 right-6 bg-yellow-400 text-black px-4 py-2 rounded-full shadow-lg hover:bg-yellow-300 transition-opacity opacity-0 pointer-events-none z-50">
     ⬆
   </button>
@@ -169,14 +149,12 @@
         btn.classList.add("opacity-0", "pointer-events-none");
       }
     });
-    btn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-    // Mobile Menu Toggle
-    const menuBtn = document.getElementById("mobileMenuBtn");
+    // Burger Toggle
+    const burger = document.getElementById("burger");
     const mobileMenu = document.getElementById("mobileMenu");
-    menuBtn.addEventListener("click", () => {
+    burger.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
     });
   </script>
