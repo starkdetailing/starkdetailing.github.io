@@ -54,8 +54,13 @@
 }
 
 /* Galeriebilder Hover-Zoom */
+img {
+  transition: transform .2s;	
+}
+
 img:hover {
-  cursor: pointer;
+  zoom: 50%;
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.15);
 }
 
 /* Footer Links mit Unterstreichung */
