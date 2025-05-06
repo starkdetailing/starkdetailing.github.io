@@ -54,10 +54,6 @@
 }
 
 /* Galeriebilder Hover-Zoom */
-img:hover {
-  cursor: pointer;
-}
-
 .gallery-img {
   border-radius: 0.75rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -70,7 +66,7 @@ img:hover {
 }
 
 /* Footer Links mit Unterstreichung */
-footer a {
+footer a{
   position: relative;
   transition: color 0.3s ease;
 }
