@@ -16,34 +16,35 @@
   <header class="flex items-center justify-between p-6 relative z-50">
     <img src="logo/logo2.png" alt="STARK Detailing Logo" class="h-16">
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex space-x-6 text-lg">
-      <a href="#leistungen" class="head">Leistungen</a>
-      <a href="#uebermich" class="head">Über mich</a>
-      <a href="#galerie" class="head">Galerie</a>
-      <a href="#kontakt" class="head">Kontakt</a>
-    </nav>
+
 
     <!-- Burger Icon -->
-    <div class="md:hidden">
-      <button id="burger" class="space-y-1">
-        <span class="block w-6 h-0.5 bg-yellow-400 transition-all duration-300"></span>
-        <span class="block w-6 h-0.5 bg-yellow-400 transition-all duration-300"></span>
-        <span class="block w-6 h-0.5 bg-yellow-400 transition-all duration-300"></span>
-      </button>
-    </div>
+	<div id="menuToggle" class="z-50 md:hidden">
+	  <div class="bar"></div>
+	  <div class="bar"></div>
+	  <div class="bar"></div>
+	</div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="absolute top-full left-0 w-full bg-black p-6 hidden flex-col text-center md:hidden z-40">
-      <a href="#leistungen" class="block py-2 head">Leistungen</a>
-      <a href="#uebermich" class="block py-2 head">Über mich</a>
-      <a href="#galerie" class="block py-2 head">Galerie</a>
-      <a href="#kontakt" class="block py-2 head">Kontakt</a>
-    </div>
+	<!-- Mobile Menü -->
+	<div id="mobileMenu" class="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-[#1f1f1f]/90 backdrop-blur-md pt-3 pl-32 pr-8 transform translate-x-full transition-transform duration-500 ease-in-out z-40 flex flex-col space-y-6 text-left text-lg font-bold">
+	  <a href="#leistungen" class="slide-link">Leistungen</a>
+	  <a href="#uebermich" class="slide-link">Über mich</a>
+	  <a href="#galerie" class="slide-link">Galerie</a>
+	  <a href="#kontakt" class="slide-link">Kontakt</a>
+	</div>
+
 
     <style>
       .head:hover {
         color: #ffd700;
+      }
+	  
+	  .slide-link {
+	    color: #ffd700;
+	  }
+	 
+	  .slide-link:hover {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
       }
     </style>
   </header>
@@ -170,5 +171,28 @@
       mobileMenu.classList.toggle("hidden");
     });
   </script>
+  
+  <script>
+  const toggle = document.getElementById("menuToggle");
+  const menu = document.getElementById("mobileMenu");
+
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("open");
+    if (menu.classList.contains("translate-x-full")) {
+      menu.classList.remove("translate-x-full");
+    } else {
+      menu.classList.add("translate-x-full");
+    }
+  });
+
+  // Menü schließen, wenn ein Link geklickt wird
+  document.querySelectorAll('.slide-link').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove("open");
+      menu.classList.add("translate-x-full");
+    });
+  });
+  </script>
+
 </body>
 </html>
