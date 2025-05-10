@@ -129,7 +129,6 @@ html {
 }
 
 /* Mobile Menü Link Animation */
-/* Mobile Menü Link Animation */
 .slide-link {
   opacity: 0;
   transform: translateX(50px);
@@ -139,9 +138,6 @@ html {
   padding: 6px 20px;
   margin-bottom: 0; /* Remove default spacing */
   transition: all 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-  border-radius: 8px; /* Rounded corners */
-  width: 80%; /* Constrains width */
   text-align: center;
 }
 .slide-link:hover {
