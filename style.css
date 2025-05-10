@@ -1,9 +1,9 @@
-/* Gelb wie im Logo */
+/* Hauptfarben */
 .yellow {
   color: #ffd700;
 }
 
-/* Gelber Button */
+/* Buttons */
 .btn-yellow {
   background-color: #ffd700;
   color: black;
@@ -15,8 +15,7 @@
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 
-
-/* Eingabefelder Kontaktformular */
+/* Formularfelder */
 .form-input {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -32,39 +31,37 @@
   transform: scale(1.02);
 }
 
-/* Leistungskarten */
+/* Karten */
 .card {
   background-color: #1f1f1f;
   padding: 1.5rem;
   border-radius: 1rem;
   color: white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid #2e2e2e;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 20px rgba(255, 215, 0, 0.15);
 }
-
-/* Karten-Titel */
 .card-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
-/* Galeriebilder Hover-Zoom */
+/* Galerie */
 .gallery-img {
   border-radius: 0.75rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .gallery-img:hover {
   transform: scale(1.07);
   box-shadow: 0 10px 30px rgba(255, 215, 0, 0.25);
 }
 
-/* Footer Links mit Unterstreichung */
+/* Footer */
 footer a {
   position: relative;
   transition: color 0.3s ease;
@@ -83,12 +80,12 @@ footer a:hover::after {
   width: 100%;
 }
 
-/* Smooth Scroll */
+/* Scrollverhalten */
 html {
   scroll-behavior: smooth;
 }
 
-/* Scrollbar Design */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -103,7 +100,7 @@ html {
   background: #e6c200;
 }
 
-/* Burger Icon Animation */
+/* Burger Menü */
 #menuToggle {
   position: relative;
   width: 30px;
@@ -129,11 +126,16 @@ html {
   transform: rotate(-45deg) translateY(-10px);
 }
 
-/* Mobile Menü Link Animation */
+/* Mobile Menü Links */
 .slide-link {
   opacity: 0;
   transform: translateX(50px);
   animation: slideInRight 0.5s forwards;
+  color: #ffd700;
+  text-shadow: none;
+}
+.slide-link:hover {
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
 }
 .slide-link:nth-child(1) { animation-delay: 0.1s; }
 .slide-link:nth-child(2) { animation-delay: 0.2s; }
