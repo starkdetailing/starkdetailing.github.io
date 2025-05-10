@@ -1,9 +1,9 @@
-/* Hauptfarben */
+/* Gelb wie im Logo */
 .yellow {
   color: #ffd700;
 }
 
-/* Buttons */
+/* Gelber Button */
 .btn-yellow {
   background-color: #ffd700;
   color: black;
@@ -15,7 +15,7 @@
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 
-/* Formularfelder */
+/* Eingabefelder Kontaktformular */
 .form-input {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -31,37 +31,39 @@
   transform: scale(1.02);
 }
 
-/* Karten */
+/* Leistungskarten */
 .card {
   background-color: #1f1f1f;
   padding: 1.5rem;
   border-radius: 1rem;
   color: white;
-  border: 1px solid #2e2e2e;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #2e2e2e;
 }
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 20px rgba(255, 215, 0, 0.15);
 }
+
+/* Karten-Titel */
 .card-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
-/* Galerie */
+/* Galeriebilder Hover-Zoom */
 .gallery-img {
   border-radius: 0.75rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
 }
 .gallery-img:hover {
   transform: scale(1.07);
   box-shadow: 0 10px 30px rgba(255, 215, 0, 0.25);
 }
 
-/* Footer */
+/* Footer Links mit Unterstreichung */
 footer a {
   position: relative;
   transition: color 0.3s ease;
@@ -80,12 +82,12 @@ footer a:hover::after {
   width: 100%;
 }
 
-/* Scrollverhalten */
+/* Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Scrollbar */
+/* Scrollbar Design */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -100,7 +102,7 @@ html {
   background: #e6c200;
 }
 
-/* Burger Menü */
+/* Burger Icon Animation */
 #menuToggle {
   position: relative;
   width: 30px;
@@ -126,16 +128,25 @@ html {
   transform: rotate(-45deg) translateY(-10px);
 }
 
-/* Mobile Menü Links */
+/* Mobile Menü Link Animation */
+/* Mobile Menü Link Animation */
 .slide-link {
   opacity: 0;
   transform: translateX(50px);
   animation: slideInRight 0.5s forwards;
-  color: #ffd700;
-  text-shadow: none;
+  font-size: 1.5rem; /* Increased font size */
+  letter-spacing: 0.5px;
+  padding: 6px 20px;
+  margin-bottom: 0; /* Remove default spacing */
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  border-radius: 8px; /* Rounded corners */
+  width: 80%; /* Constrains width */
+  text-align: center;
 }
 .slide-link:hover {
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  color: #ffd700;
+  transform: scale(1.05);
 }
 .slide-link:nth-child(1) { animation-delay: 0.1s; }
 .slide-link:nth-child(2) { animation-delay: 0.2s; }
@@ -146,5 +157,57 @@ html {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* Desktop Navigation Enhancements */
+#desktopNav a {
+  position: relative;
+  padding: 5px 0;
+}
+
+#desktopNav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+#desktopNav a:hover::after {
+  width: 100%;
+}
+
+/* Content Push Animation */
+#mainContent {
+  transition: transform 0.5s ease;
+}
+
+#mainContent.content-pushed {
+  transform: translateY(150px); /* Push content much further down when menu is open */
+}
+
+/* Mobile Menu Fullscreen Enhancement */
+@media (max-width: 767px) {
+  #mobileMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  /* Fixed positioning for navigation links to avoid overlap */
+  #mobileMenu .absolute.top-24 {
+    /* Position is already set in HTML */
+    width: 100%;
+    z-index: 50;
+  }
+  
+  /* Add more space between title and menu items */
+  .content-pushed h1.text-5xl {
+    margin-top: 8rem;
   }
 }
