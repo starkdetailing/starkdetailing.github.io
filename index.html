@@ -10,7 +10,57 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
-    /* Mobile Menu Fix */
+    /* Burger Menu Styles - Only visible on mobile */
+    #menuToggle {
+      display: none; /* Hidden by default */
+      flex-direction: column;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    /* Show burger menu only on mobile (screens smaller than 768px) */
+    @media (max-width: 767px) {
+      #menuToggle {
+        display: flex;
+      }
+      
+      #desktopNav {
+        display: none !important;
+      }
+    }
+
+    /* Hide burger menu on desktop (screens 768px and larger) */
+    @media (min-width: 768px) {
+      #menuToggle {
+        display: none !important;
+      }
+      
+      #desktopNav {
+        display: flex !important;
+      }
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+
+    #menuToggle.open .bar:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    #menuToggle.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    #menuToggle.open .bar:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Mobile Menu */
     #mobileMenu {
       position: fixed;
       top: 0;
@@ -22,6 +72,14 @@
       z-index: 9999 !important;
       transform: translateY(-100%);
       transition: transform 0.5s ease-in-out;
+      display: none; /* Hidden by default */
+    }
+
+    /* Show mobile menu only on mobile screens */
+    @media (max-width: 767px) {
+      #mobileMenu {
+        display: block;
+      }
     }
     
     #mobileMenu.menu-open {
@@ -56,7 +114,7 @@
     <img src="logo/logo2.png" alt="STARK Detailing Logo" class="h-16">
 
     <!-- Desktop Navigation -->
-    <nav id="desktopNav" class="hidden md:flex space-x-8 text-lg font-bold">
+    <nav id="desktopNav" class="flex space-x-8 text-lg font-bold">
       <a href="#leistungen" class="hover:text-yellow-400 transition-colors duration-300">Leistungen</a>
       <a href="#uebermich" class="hover:text-yellow-400 transition-colors duration-300">Über mich</a>
       <a href="#galerie" class="hover:text-yellow-400 transition-colors duration-300">Galerie</a>
@@ -64,7 +122,7 @@
     </nav>
 
     <!-- Burger Icon - Only show on mobile -->
-    <div id="menuToggle" class="md:hidden cursor-pointer">
+    <div id="menuToggle">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
@@ -139,9 +197,6 @@
           <p class="text-gray-300 text-sm">Gründliche Tiefenreinigung</p>
         </div>
       </div>
-      <p class="text-center text-gray-400 mt-6" data-aos="fade-up">
-        Eine Auswahl unserer Arbeiten: Lackkorrekturen, Keramikversiegelung & Tiefenreinigung.
-      </p>
     </section>
 
     <!-- Kontakt -->
@@ -196,7 +251,7 @@
     });
     scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-    // Mobile menu handling - COMPLETELY REWRITTEN
+    // Mobile menu handling
     const toggle = document.getElementById("menuToggle");
     const menu = document.getElementById("mobileMenu");
     const body = document.body;
@@ -213,38 +268,41 @@
       toggle.classList.remove("open");
     }
 
-    // Toggle menu on burger click
-    toggle.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      if (menu.classList.contains("menu-open")) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
+    // Only add event listeners if elements exist (mobile only)
+    if (toggle && menu) {
+      // Toggle menu on burger click
+      toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (menu.classList.contains("menu-open")) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
 
-    // Close menu when clicking on the backdrop (but not on menu content)
-    menu.addEventListener("click", (e) => {
-      if (e.target === menu) {
-        closeMenu();
-      }
-    });
+      // Close menu when clicking on the backdrop (but not on menu content)
+      menu.addEventListener("click", (e) => {
+        if (e.target === menu) {
+          closeMenu();
+        }
+      });
 
-    // Close menu on window resize to desktop size
-    window.addEventListener("resize", () => {
-      if (window.innerWidth >= 768) {
-        closeMenu();
-      }
-    });
+      // Close menu on window resize to desktop size
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          closeMenu();
+        }
+      });
 
-    // Close menu on escape key
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && menu.classList.contains("menu-open")) {
-        closeMenu();
-      }
-    });
+      // Close menu on escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && menu.classList.contains("menu-open")) {
+          closeMenu();
+        }
+      });
+    }
 
     // Make closeMenu globally available
     window.closeMenu = closeMenu;
